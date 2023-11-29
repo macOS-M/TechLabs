@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<link href="~/Content/reset.css" rel="stylesheet" />*@
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/layout/navbar.css" rel="stylesheet" />
+    <link href="~/Content/layout/body.css" rel="stylesheet" />
+    <link href="~/Content/layout/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" />
+    <title>@ViewBag.Title - Techlabs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs5/dt-1.12.1/b-2.2.3/datatables.min.js"></script>
+    <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+
+</head>
+<body>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="https://localhost:44368/home/index">
+                <img src="~/Assets/Logo3.png" alt="Tech Labs" width="30" height="30" class="d-inline-block logo-img">
+                TechLabs
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">@Html.ActionLink("Laboratorios", "Results", "Catalog", new {ype = "Lab"}, new { @class = "nav-link" })</li>
+
+            
+                    <li class="nav-item">@Html.ActionLink("Categorías", "Catalog", "Catalog", null, new { @class = "nav-link" })</li>
+                    @if (Session["user"] != null && Session["role"].ToString() != "0") { 
+                    <li class="nav-item">@Html.ActionLink("Administración", "AdministrationPanel", "Home", null, new { @class = "nav-link" })</li>
+                    }
+                </ul>
+                <ul class="nav navbar-nav pull-right me-5">
+
+                    <li class="nav-item dropdown">
+
+                        @if (Session["user"] != null && Session["role"] != null)
+                        {
+                            var user = Session["user-name"];
+                            var photo = Session["avatar"];
+
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="img-rounded profile-img">
+                                    <img src="@photo" width="30" height="30" class="d-inline-block logo-img" />
+                                </div>
+                                @user <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                @*<li><a class="dropdown-item" href="#">Mi Perfil</a></li>*@
+                                @*<li><a class="dropdown-item" href="#">Another action</a></li>*@
+                                <li class="nav-item">@Html.ActionLink("Mi perfil", "UserProfile", "Home", null, new { @class = "dropdown-item" })</li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li class="nav-item">@Html.ActionLink("Cerrar sesión", "Logout", "Home", null, new { @class = "dropdown-item" })</li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div class="img-rounded profile-img">
+                                    <img src="~/Assets/user1.png" width="30" height="30" class="d-inline-block logo-img" />
+                                </div>
+                                Iniciar <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="nav-item">@Html.ActionLink("Iniciar sesión", "Login", "Home", null, new { @class = "dropdown-item" })</li>
+                                @*<li><a class="dropdown-item" href="#">Another action</a></li>*@
+                                @*<li><hr class="dropdown-divider"></li>*@
+                                <li class="nav-item">@Html.ActionLink("Crear cuenta", "UserRegistration", "Home", null, new { @class = "dropdown-item" })</li>
+                                <li class="nav-item">@Html.ActionLink("Asociarme", "LabAdminRegistration", "Home", null, new { @class = "dropdown-item" })</li>
+                            </ul>
+                        }
+
+                    </li>
+
+                    @if (Session["user"] != null && Session["role"].ToString() == "0" && Session["role"] != null)
+                    {
+                        <li class="nav-item">@Html.ActionLink("Carrito", "Cart", "Home", null, new { @class = "nav-link" })</li>
+
+                    }
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container body-content">
+        <div class="body-padding">
+            @RenderBody()
+        </div>
+    </div>
+
+    <div class="footer">
+        <footer class="text-center text-lg-start bg-light text-muted">
+            <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+                © 2022 Copyright:
+                @Html.ActionLink("MonkeyWare", "MonkeyWare", "Home", null, new { @class = "text-reset fw-bold" })
+            </div>
+
+        </footer>
+    </div>
+
+    @*<script src="~/Scripts/jquery-3.6.0.js"></script>*@
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="~/Scripts/Views/utils.js"></script>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+
+
+
+
+
+
+</body>
+</html>

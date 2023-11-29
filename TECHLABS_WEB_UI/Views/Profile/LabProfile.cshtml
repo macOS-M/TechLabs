@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "LabProfile";
+}
+
+<html>
+    <head>
+        <link href="~/Content/Views/LabProfile.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="Lab-pictures">
+            <h1 class="text-center">Labin</h1>
+            <h4 class="text-center">Heredia, Santa Bárbara</h4>
+        </div>
+        <div class="Examenes">
+            <div class="container bootstrap snipets">
+                <h1 class="text-center text-muted">Catálogo Exámenes</h1>
+                <div class="text-center"><input type="search" class="text-center" /><button>Buscar</button></div>
+                <div class="row flow-offset-1 text-center">
+
+
+                    <!--inicio de lista de examenes-->
+                    <div class="col-xs-6 col-md-4 item-exam">
+                        <div class="product tumbnail thumbnail-3">
+                            <i class="fa-solid fa-dumbbell fa-3x"></i>
+                            <div class="caption">
+                                <h6>@Html.ActionLink("Calcio, orina 24 horas", "ExamProfile", "Profile", new { id = "1" }, new { @class = "price" })</h6>
+                                <h6>₡12,900.00</h6>
+                                <button>Agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="~/Scripts/Views/Profiles/ExamProfile.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,60 @@
+﻿@model TECHLABS_DTO.OTP
+@{
+    ViewBag.Title = "OTP";
+}
+
+<link href="~/Content/Views/OTP.css" rel="stylesheet" />
+<script src="~/Scripts/Views/OTP.js"></script>
+
+<h2 class="pt-5"></h2>
+
+@using (Html.BeginForm("OTPPost", "Home", FormMethod.Post))
+{
+    <form class="mt-5">
+        <div class="container w-50 rounded-3 pt-3 pb-3" id="parent-container">
+            <h3 class="container text-center ">Confirmación de identidad</h3>
+
+            <div class="text-center">
+                <p class="text-dark"></p>
+                <p class="text-dark">Para continuar por favor complete esta verificación.<br />Hemos enviado un código de uso único al método de autenticación seleccionado<span></span></p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-6 ">
+                    <label for="otpNumber" class="form-label fw-bold">Ingrese el código de uso único </label>            
+                    @Html.TextBoxFor(m => m.otp, new { Class = "form-control" })
+                </div>
+            </div>
+            <div class="d-flex justify-content-center pb-2">
+                <button class="btn btn-primary mt-3" type="submit">Confirmar</button>
+            </div>
+            
+
+        </div>
+    </form>
+}
+
+<div class="text-center mt-3 pb-2">
+    <input type="text" id="user-method-otp" hidden value="@ViewData["method"]"  />
+    <input type="text" id="user-contact-otp" hidden value="@ViewData["contact"]"  />
+
+    <button type="button" class="btn btn-outline-primary btn-sm" id="resend-otp">Reenviar código</button>
+
+</div>
+
+
+@if (ViewBag.Message != null)
+{
+    <script type="text/javascript">
+        window.onload = function () {
+            Swal.fire("@ViewBag.Message", '', 'info')
+        }
+
+    </script>
+
+
+}
+
+
+
+

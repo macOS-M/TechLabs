@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewBag.Title = "AdministrationPanel";
+}
+
+<script src="~/Scripts/Views/AdministrationPanel.js"></script>
+<link href="~/Content/Views/AdministrationPanel.css" rel="stylesheet" />
+
+<h2 class="text-center pt-5">Panel de administración</h2>
+
+<div class="container mt-5">
+
+
+   
+    <div class="row">
+        @if (Session["user"] != null && Session["role"].ToString() == "2" || Session["role"].ToString() == "3")
+        {
+            <div class="col-3">
+                <div class="card tile" style="width: 12rem;" id="labs-tile">
+                    <div class="card-body">
+                        <h5 class="card-title"> Administrar<br />Laboratorios</h5>
+                        <p class="description">Agregar | Editar | Eliminar </p>
+                        <h3 class="text-center"><i class="fa-solid fa-flask text-center"></i></h3>
+
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (Session["user"] != null && Session["manage-tests"]!=null && Session["manage-tests"].ToString() == "1")
+        {
+            <div class="col-3">
+                <div class="card tile" style="width: 12rem; " id="test-tile">
+                    <div class="card-body">
+                        <h5 class="card-title">Administrar<br />Exámenes</h5>
+                        <p class="description">Agregar | Editar | Eliminar </p>
+                        <h3 class="text-center"><i class="fa-solid fa-vial-circle-check"></i></h3>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (Session["user"] != null && Session["manage-employees"].ToString() == "1")
+        {
+            <div class="col-3">
+                <div class="card tile" style="width: 12rem;" id="users-tile">
+                    <div class="card-body">
+                        <h5 class="card-title"> Administrar<br />Usuarios</h5>
+                        <p class="description">Agregar | Editar | Eliminar </p>
+                        <h3 class="text-center"><i class="fa-solid fa-user-nurse"></i><i class="fa-solid fa-user-doctor"></i></h3>
+                    </div>
+                </div>
+            </div>
+        }
+
+        @if (Session["user"] != null && Session["role"].ToString() == "2" || Session["role"].ToString() == "3")
+        {
+            <div class="col-3">
+                <div class="card tile" style="width: 12rem;" id="dashboard-tile">
+                    <div class="card-body">
+                        <h5 class="card-title"> Dashboard & Configuración</h5>
+                        <p class="description">Reportes de actividad </p>
+                        <h3 class="text-center"><i class="fa-regular fa-file"></i></h3>
+                    </div>
+                </div>
+            </div>
+        }
+        
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-3">
+            <div class="card tile" style="width: 12rem;" id="appointment-tile">
+                <div class="card-body">
+                    <h5 class="card-title"> Citas & Resultados</h5>
+                    <p class="description">Ingreso de resultados </p>
+                    <h3 class="text-center"><i class="fa-regular fa-calendar-check"></i></h3>
+                </div>
+            </div>
+        </div>
+
+        @if (Session["user"] != null && Session["role"].ToString() == "3")
+        {
+            <div class="col-3">
+
+
+                <div class="card tile" style="width: 12rem;" id="logs-tile">
+                    <div class="card-body">
+                        <h5 class="card-title"> Registro de movimientos</h5>
+                        <p class="description">Logs | Cambios | Historial </p>
+                        <h3 class="text-center"><i class="fa-regular fa-calendar-check"></i></h3>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+
+
+    </div>
+
+
+
+</div>

@@ -1,0 +1,207 @@
+﻿
+@{
+    ViewBag.Title = "LabAdminRegistration";
+}
+<script src="~/Scripts/Views/UsersRegister/LabAdminRegistration.js"></script>
+<link href="~/Content/Views/EmployeeRegistration.css" rel="stylesheet" />
+
+
+
+<h2 class="container text-center mt-5"> Suscribirse como socio</h2>
+
+<div class="container">
+
+    <div class="justify-content-center text-start mt-3">
+        <img src="~/Assets/default-user.jpg" id="photo" />
+        <button class="btn btn-outline-primary ms-3" type="button" id="btn-foto">Subir foto</button>
+    </div>
+
+    <div class="row mt-3">
+
+        <div class="col">
+            <div>
+                <label for="txtNombre" class="form-label mt-2 mb-0">Nombre<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="txtNombre">
+            </div>
+            <div>
+                <label for="txtApellido" class="form-label mt-2 mb-0">Apellido<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="txtApellido">
+            </div>
+            <div>
+                <label for="txtSegundoApellido" class="form-label mt-2 mb-0">Segundo Apellido</label>
+                <input type="text" class="form-control" id="txtSegundoApellido">
+            </div>
+            <div>
+                <label for="txtTelefono" class="form-label mt-2 mb-0">Teléfono móvil<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="txtTelefono">
+            </div>
+            <div>
+                <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-phone-validation" data-bs-toggle="modal" data-bs-target="#phoneModal">Validar número de teléfono </button>
+            </div>
+        </div>
+        <div class="col">
+            <div>
+                <label for="txtEmail" class="form-label mt-2 mb-0">Correo electrónico<span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="txtEmail">
+            </div>
+            @*<div>
+                    <label for="inputLab" class="form-label mt-2 mb-0">Laboratorio</label>
+                    <select class="form-control" id="inputLab"></select>
+                </div>*@
+
+            <div>
+                <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-email-validation" data-bs-toggle="modal" data-bs-target="#emailModal">Validar correo electrónico</button>
+
+            </div>
+            <div>
+                <label for="txtPassword" class="form-label mt-2 mb-0">Contraseña<span class="text-danger">*</span></label>
+                <input type="password" class="form-control" id="txtPassword">
+            </div>
+            <div>
+                <label for="txtPasswordCon" class="form-label mt-2 mb-0">Confirmacion Contraseña<span class="text-danger">*</span></label>
+                <input type="password" class="form-control" id="txtPasswordCon">
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <label class="form-label fw-bold mt-2">Permisos de administración: </label>
+            <div class="form-check d-flex" id="div-permissions">
+                <input class="form-check-input" type="checkbox" id="checkBoxLaboratorios" checked disabled>
+                <label class="form-check-label me-5 ms-2" for="checkBoxLaboratorios">Laboratorios</label>
+                <input class="form-check-input" type="checkbox" id="checkBoxEmpleados" checked disabled>
+                <label class="form-check-label me-5 ms-2" for="checkBoxEmpleados">Empleados</label>
+                <input class="form-check-input" type="checkbox" id="checkBoxExamenes" checked disabled>
+                <label class="form-check-label ms-2" for="checkBoxExamenes">Exámenes</label>
+            </div>
+
+        </div>
+
+        <div class="col">
+            <label class="form-label fw-bold mt-2">Seleccione un método de autenticación </label>
+            <div class="form-check d-flex">
+                <input class="form-check-input " type="checkbox" id="checkBoxEmail">
+                <label class="form-check-label me-5 ms-2" for="checkboxEmail">Correo electrónico</label>
+                <input class="form-check-input " type="checkbox" id="checkBoxSMS">
+                <label class="form-check-label ms-2" for="checkSMS">SMS</label>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="text-center pt-5">
+        <button type="submit" class="btn btn-primary" id="btnUpdateInfo">Registrar</button>
+    </div>
+    <div>
+        <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-payment" data-bs-toggle="modal" data-bs-target="#PayModal">Proceder a pagar</button>
+
+    </div>
+</div>
+
+
+
+@*Modal*@
+
+<div class="modal fade" id="phoneModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Hemos enviado un códido de verificacion (OTP) a su teléfono móvil</h1>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="phone-otp-input" class="col-form-label" id="phone-otp-lbl">Ingrese el OTP</label>
+                        <input type="text" class="form-control" id="phone-otp-input">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btn-confirm-phone-validation">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Modal*@
+
+<div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Hemos enviado un códido de verificacion (OTP) a su correo electrónico</h1>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="email-otp-input" class="col-form-label" id="email-otp-lbl">Ingrese el OTP</label>
+                        <input type="text" class="form-control" id="email-otp-input">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btn-confirm-email-validation">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Paypal Modal*@
+<div class="modal fade" id="PayModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5"><i class="fa-brands fa-paypal  fa-4x"></i></h1>
+                <h4>Pago de suscripción </h4>
+
+            </div>
+            <div class="text-end pt-2 pe-3"><h5>@DateTime.Now</h5></div>
+            <div class="modal-body">
+                <div class="container pt-5">
+                    <div class="row">
+                        <div class="col">
+                            <h5 class="text-start">Membrecía anual x 1</h5>
+                            <h5 class="text-start">I.V.A. 13%</h5>
+                        </div>
+
+                        <div class="col">
+                            <h5 class="text-end pe-3">₡140.000,00  CRC</h5>
+                            <h5 class="text-end pe-3">₡18.200,00  CRC</h5>
+                        </div>
+                        <hr class="dotted">
+                        <div class="row">
+                            <div class="col">
+                                <h5 class="text-start">Total</h5>
+                            </div>
+
+                            <div class="col">
+                                <h5 class="text-end">₡158.200,00  CRC</h5>
+
+                            </div>
+                        </div>
+                    </div>
+                    <p class="pt-5">Nota: Después de hacer clic en el botón, será dirigido a una pasarela segura para el pago. Después de completar exitosamente el proceso de pago, será redirigido a la página de inicio de sesión.</p>
+                    <div class="text-center pb-3">
+                        <img src="~/Assets/btn-paypal.png" width="300" />
+                    </div>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fa-solid fa-xmark pe-3"></i>Cancelar</button>
+                    @*<button type="button" class="btn btn-primary" id="btn-confirm-email-validation">Confirmar</button>*@
+                </div>
+            </div>
+    </div>
+</div>

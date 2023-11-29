@@ -1,0 +1,36 @@
+﻿.left-panel {
+    background: #476072;
+    border-radius: 3px;
+    color: white;
+}
+
+input[type="text"] {
+    padding: 1px;
+}
+
+input[type="password"] {
+    padding: 1px;
+}
+
+
+
+    button {
+        background-color: #476072;
+        color: white;
+    }
+
+
+
+#photo {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 0.5px solid black;
+    background-position: center;
+    background-size: contain;
+    border-color: #000;
+}
+.fa-check{
+    color:green;
+    margin-left:20px;
+}

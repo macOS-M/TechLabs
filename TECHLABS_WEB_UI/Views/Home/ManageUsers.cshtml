@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "ManageUsers";
+}
+<script src="~/Scripts/Views/UserManagement/ManageUsers.js"></script>
+
+<link href="~/Content/Views/ManageUsers.css" rel="stylesheet" />
+
+
+
+<h2 class="container text-center pt-5">Administración de usuarios</h2>
+<iv>
+
+
+
+
+<div class="con text-end" >
+    <button class="btn btn-primary mb-3" id="link-resgiterEmpolyee">Registrar Empleado</button>
+</div>
+
+
+
+<table id="tblUsers" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Teléfono</th>
+            <th>Correo electrónico</th>
+            <th>Tipo Usuario</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+            
+        </tr>
+    </thead>
+</table>
+
+
+
+    @*Modal Editar*@
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar usuario: <span id="editingUserName"> </span></h1>
+                <img src="~/Assets/default-user.jpg" id="photo" />
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div>
+                        <label for="txtNombre" class="form-label mb-0 me-2">Nombre<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtNombre">
+                    </div>
+                    <div>
+                        <label for="txtApellido" class="form-label mb-0 me-2">Apellido<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtApellido">
+                    </div>
+                    <div>
+                        <label for="txtSegundoApellido" class="form-label mb-0 me-2">Segundo Apellido</label>
+                        <input type="text" class="form-control" id="txtSegundoApellido">
+                    </div>
+                    <div>
+                        <label for="txtTelefono" class="form-label mb-0 me-2">Teléfono móvil<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtTelefono">
+                    </div>
+
+                    <div>
+                        <label for="txtEmail" class="form-label mb-0 me-2">Correo electrónico<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtEmail">
+                    </div>
+
+                    <div>
+                        <label for="txtPassword" class="form-label mb-0 me-2">Contraseña<span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="txtPassword">
+                    </div>
+
+                    <label class="form-label fw-bold">Método de autenticación </label>
+                    <div class="form-check ">
+                        <input class="form-check-input " type="checkbox" value="" id="checkBoxEmail">
+                        <label class="form-check-label" for="checkboxEmail">Correo electrónico</label>
+                    </div>
+                    <div class="form-check ">
+                        <input class="form-check-input " type="checkbox" value="" id="checkBoxSMS">
+                        <label class="form-check-label" for="checkSMS">SMS</label>
+                    </div>
+                    <div id="role-div">
+                        <label for="" class="form-label mb-0 me-2">Tipo de usuario<span class="text-danger">*</span></label>
+                        <select id="role-list" class="form-select">
+                            <option value='Cliente' id="client-option">Cliente</option>
+                            <option value='Empleado' id="employee-option">Empleado</option>
+                            <option value='Administrador' id="labAdmin-option">Administrador</option>
+                            <option value='Super Admin' id="superAdmin-option">Super Administrador</option>
+                        </select>
+                    </div>
+                    <div id="lbl-permissions">
+                        <label class="form-label fw-bold">Este usuario puede administrar: </label>
+                    </div>
+                    <div class="form-check d-flex" id="div-permissions">
+                        <input class="form-check-input" type="checkbox" value="" id="checkBoxLaboratorios">
+                        <label class="form-check-label me-5 ms-2" for="checkboxEmail">Laboratorios</label>
+                        <input class="form-check-input" type="checkbox" value="" id="checkBoxEmpleados">
+                        <label class="form-check-label me-5 ms-2" for="checkboxEmail">Empleados</label>
+                        <input class="form-check-input" type="checkbox" value="" id="checkBoxExamenes">
+                        <label class="form-check-label ms-2" for="checkboxEmail">Exámenes</label>
+                    </div>
+
+                    <div>
+                        <label for="" class="form-label mb-0 me-2">Estado<span class="text-danger">*</span></label>
+                        <select id="status-list" class="form-select">
+                            <option value='Activo' id="active-option">Activo</option>
+                            <option value='Inactivo' id="inactive-option">Inactivo</option>
+                        </select>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnConfirmChanges">Editar usuario</button>
+            </div>
+        </div>
+    </div>
+</div>
+<input type="text" class="form-control" value=@Session["email"] id="userSession" hidden>

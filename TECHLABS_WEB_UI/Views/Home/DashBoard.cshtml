@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "DashBoard";
+}
+
+<script src="~/Scripts/Views/DashBoards/DashBoard.js"></script>
+<link href="~/Content/Views/DashBard.css" rel="stylesheet" />
+
+
+
+
+
+<div class="container pt-5">
+
+    <h2 class="container text-center mt-1">Desempeño</h2>
+
+    <div class="row pt-3 text-center">
+        <div class="col">
+            <p class="title-header">Usuarios activos</p>
+            <p class="info">32</p>
+        </div>
+        <div class="col">
+
+            <p class="title-header">Usuarios inactivos</p>
+            <p class="info">48</p>
+        </div>
+        <div class="col">
+            <p class="title-header">Total de usuarios</p>
+            <p class="info">80</p>
+        </div>
+    </div>
+
+    <div class="row pt-3 text-center">
+        <div class="col">
+            <p class="title-header">Socios activos</p>
+            <p class="info">20 </p>
+        </div>
+        <div class="col">
+            <p class="title-header">Socios registrados</p>
+            <p class="info">35</p>
+        </div>
+        <div class="col">
+            <p class="title-header">Ingreso por membrecias</p>
+            <p class="info">₡ 4.9 MM  </p>
+        </div>
+    </div>
+    <div class="row pt-3 text-center">
+        <div class="col ">
+            <p class="title-header">Laboratorios Top 3</p>
+            <div class="d-flex align-content-center justify-content-center">
+                <table class="table w-auto">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Laboratorio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Health & Wellness</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Labin</td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Family Care</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col">
+            <p class="title-header">Cantidad de ventas</p>
+            <p class="info">50</p>
+        </div>
+        <div class="col">
+            <p class="title-header">Ingreso por ventas</p>
+            <p class="info">₡ 1.5 MM  </p>
+        </div>
+    </div>
+
+    <h2 class="container text-center mt-3">Configuración general</h2>
+
+    <div class="row mt-3">
+
+        <div class="col-6">
+
+            <div>
+                <label for="txtNombreDescuento" class="form-label mb-0 me-2">Nombre del descuento</label>
+                <input type="text" class="form-control" id="txtNombreDescuento">
+            </div>
+
+            <div>
+                <label for="txtDescuento" class="form-label mb-0 me-2">Porcentaje de descuento</label>
+                <input type="text" class="form-control" id="txtDescuento">
+            </div>
+            <div class="mt-2">
+                <button type="button" class="btn btn-outline-primary btn-sm" id="btn-discount">Actualizar descuento</button>
+            </div>
+        </div>
+
+        @if (Session["user"] != null && Session["role"].ToString() == "3")
+        {
+            <div class="col-6">
+                <div>
+                    <label for="txtIVA" class="form-label mb-0 me-2">IVA<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="txtNombre">
+                </div>
+                <div class="mt-2">
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="btn-iva">Actualizar IVA</button>
+                </div>
+                <div>
+                    <label for="txtMembrecia" class="form-label mb-0 me-2">Costo de membrecia<span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="txtIVA">
+                </div>
+                <div class="mt-2">
+                    <button type="button" class="btn btn-outline-primary btn-sm" id="btn-membership">Actualizar costo</button>
+                </div>
+            </div>
+        }
+        </div>
+

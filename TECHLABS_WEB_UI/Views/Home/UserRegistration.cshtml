@@ -1,0 +1,177 @@
+﻿
+@{
+    ViewBag.Title = "UserRegistration";
+}
+<link href="~/Content/Views/UserRegistration.css" rel="stylesheet" />
+<script src="~/Scripts/Views/UsersRegister/CustomerRegistration.js"></script>
+
+<h2 class="container text-center mt-5" id="title-header"> Registro de usuario</h2>
+
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+
+
+
+        <div class="container">
+
+            <div class="justify-content-center text-start mt-3">
+                <img src="~/Assets/default-user.jpg" id="photo" />
+                <button class="btn btn-outline-primary ms-3" type="button" id="btn-foto">Subir foto</button>
+            </div>
+
+            <div class="row mt-3">
+
+                <div class="col">
+                    <div>
+                        <label for="txtNombre" class="form-label mb-0 me-2">Nombre<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtNombre">
+                    </div>
+                    <div>
+                        <label for="txtApellido" class="form-label mb-0 me-2">Apellido<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtApellido">
+                    </div>
+                    <div>
+                        <label for="txtSegundoApellido" class="form-label mb-0 me-2">Segundo Apellido</label>
+                        <input type="text" class="form-control" id="txtSegundoApellido">
+                    </div>
+                    <div>
+                        <label for="txtTelefono" class="form-label mb-0 me-2">Teléfono móvil<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtTelefono">
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-phone-validation" data-bs-toggle="modal" data-bs-target="#phoneModal">Validar número de teléfono </button>
+                    </div>
+                </div>
+                <div class="col">
+                    <div>
+                        <label for="txtEmail" class="form-label mb-0 me-2">Correo electrónico<span class="text-danger">*</span></label>
+                        <input type="text" class="form-control" id="txtEmail">
+                    </div>
+
+                    <div>
+                        <button type="button" class="btn btn-outline-secondary btn-sm" id="btn-email-validation" data-bs-toggle="modal" data-bs-target="#emailModal">Validar correo electrónico</button>
+
+                    </div>
+                    <div>
+                        <label for="txtPassword" class="form-label mb-0 me-2">Contraseña<span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="txtPassword">
+                    </div>
+                    <div>
+                        <label for="txtPasswordCon" class="form-label mb-0 me-2">Confirmacion Contraseña<span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="txtPasswordCon">
+                    </div>
+
+                    <label class="form-label fw-bold mb-0 me-2 mt-3">Seleccione un método de autenticación </label>
+                    <div class="form-check d-flex">
+                        <input class="form-check-input " type="checkbox" value="" id="checkBoxEmail">
+                        <label class="form-check-label me-5 ms-2" for="checkboxEmail">Correo electrónico</label>
+
+                        <input class="form-check-input " type="checkbox" value="" id="checkBoxSMS">
+                        <label class="form-check-label me-5 ms-2" for="checkSMS">SMS</label>
+                    </div>
+                </div>
+
+                <div class="text-center pt-5">
+                    <button type="submit" class="btn btn-primary" id="btnUpdateInfo">Confirmar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@*Modal*@
+
+<div class="modal fade" id="phoneModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Hemos enviado un códido de verificacion (OTP) a su teléfono móvil</h1>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="phone-otp-input" class="col-form-label" id="phone-otp-lbl">Ingrese el OTP</label>
+                        <input type="text" class="form-control" id="phone-otp-input">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btn-confirm-phone-validation">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*Modal*@
+
+<div class="modal fade" id="emailModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Hemos enviado un códido de verificacion (OTP) a su correo electrónico</h1>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <label for="email-otp-input" class="col-form-label" id="email-otp-lbl">Ingrese el OTP</label>
+                        <input type="text" class="form-control" id="email-otp-input">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btn-confirm-email-validation">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@*Modal*@
+
+<div class="modal fade" id="OTPModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Confirmación de identidad</h1>
+            
+            </div>
+            <div class="modal-body">
+                <div>
+                    <p class="text-dark">Para continuar por favor complete esta verificación.<br />Hemos enviado un código de uso único <span id="contact-media"></span></p>
+
+                </div>
+                <form>
+
+                    <div>
+                        <label for="txtOneTimePassword" class="form-label mb-0 me-2">Código de confirmación<span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="txtOneTimePassword">
+                    </div>
+                    <div class="text-center pt-3">
+                        <button type="button" class="btn btn-primary" id="btn-validateOTP">Confirmar</button>
+                    </div>
+
+
+                    @*<div>
+                        <label for="txtPasswordCon" class="form-label mb-0 me-2">Confirmación de contraseña<span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="txtPasswordCon">
+                    </div>*@
+
+
+
+
+
+                </form>
+            </div>
+            <div class="modal-footer pt-3">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                @*<button type="button" class="btn btn-primary" id="btnConfirmChanges">Confirmar</button>*@
+            </div>
+        </div>
+    </div>
+</div>

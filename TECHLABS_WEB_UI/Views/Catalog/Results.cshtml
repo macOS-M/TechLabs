@@ -1,0 +1,166 @@
+﻿
+@{
+    ViewBag.Title = "Results";
+}
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/Views/Results.css" rel="stylesheet"/>
+
+    <div class="container">
+        <div class="row">
+            <!-- BEGIN SEARCH RESULT -->
+            <div class="col-md-12">
+                <div class="grid search">
+                    <div class="grid-body">
+                        <div class="row">
+                            <!-- BEGIN FILTERS -->
+                            <div class="col-md-3">
+                                <h2 class="grid-title"><i class="fa fa-filter"></i> Filtrar por</h2>
+                                <hr>
+                                <!-- BEGIN FILTER BY CATEGORY -->
+                                <h4>Por tipo</h4>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Lab</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Examen</label>
+                                </div>
+                                <!-- END FILTER BY CATEGORY -->
+                                <h4>Por categoría:</h4>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck" onclick="update"> Deportes</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Embarazo</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Hepático</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Hormonal femenino</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Infantil</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Nutricional</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Renal</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Tiroideo</label>
+                                </div>
+                                <div class="checkbox">
+                                    <label><input type="checkbox" class="icheck"> Transmisión Sexual</label>
+                                </div>
+                            <div class="padding"></div>
+                            <div class="padding"></div>
+                        </div>
+                            <!-- END FILTERS -->
+                            <!-- BEGIN RESULT -->
+                            <div class="col-md-9">
+                                <h2><i class="fa fa-file-o"></i> Resultados</h2>
+                                <hr>
+                                <!-- BEGIN SEARCH INPUT -->
+                                <div class="input-group">
+                                    <input type="text" class="form-control" value="">
+                                    <span class="input-group-btn">
+                                        <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+                                    </span>
+                                </div>
+                                <!-- END SEARCH INPUT -->
+
+                                <div class="padding"></div>
+                                <div class="row">
+
+                                    <!-- BEGIN ORDER RESULT -->
+                                    <div class="col-sm-6 ">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                                                Ordernar por <span class="caret"></span>
+                                            </button>
+                                            <ul class="dropdown-menu" role="menu">
+                                                <li><a href="#">Name</a></li>
+                                                <li><a href="#">Date</a></li>
+                                                <li><a href="#">View</a></li>
+                                                <li><a href="#">Rating</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!-- END ORDER RESULT -->
+                                    <div class="col-md-6 text-right">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default active"><i class="fa fa-list"></i></button>
+                                            <button type="button" class="btn btn-default"><i class="fa fa-th"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- BEGIN TABLE RESULT -->
+                                <div class="table-responsive">
+                                    <table class="table table-hover">
+                                        <tbody>
+                                            <tr class="lab">
+                                                <td class="number text-center">1</td>
+                                                <td class="image"><img src="https://res.cloudinary.com/dt4umsdjp/image/upload/v1668319961/ddodp5puotxqlxqe74yh.jpg" width="400" alt="Logo"></td>
+                                                <td class="product"><strong>LABIN </strong><br></td>
+                                                <td class="price text-center"><p>Abiertos de: </p><b>9am - 5pm</b></td>
+                                                <td class="price text-right">Heredia, Santa Bárbara</td>
+                                            </tr>
+                                            <tr class="lab">
+                                                <td class="number text-center">2</td>
+                                                <td class="image"><img src="https://res.cloudinary.com/dt4umsdjp/image/upload/v1668319961/uj9pt3lwq4tsd1fo73dq.jpg" width="400px" alt="Logo"></td>
+                                                <td class="product"><strong>Laboratorios Martínez</strong><br></td>
+                                                <td class="price text-center"><p>Abiertos de: </p><b>8 - 4pm</b></td>
+                                                <td class="price text-right">San Jose, Zapote</td>
+                                            </tr>
+                                            <tr class="lab" >
+                                                <td class="number text-center">3</td>
+                                                <td class="image"><img src="https://res.cloudinary.com/dt4umsdjp/image/upload/v1668319962/ja52yficfs3u4rnwteks.jpg" width="400px" alt="Logo"></td>
+                                                <td class="product"><strong>LABIN </strong><br></td>
+                                                <td class="price text-center"><p>Abiertos de: </p><b>9am - 5pm</b></td>
+                                                <td class="price text-right">Heredia, San Joaquín</td>
+                                            </tr>
+                                            <tr class="Exam Deportes" onclick="window.location = 'https://localhost:44368/Profile/ExamProfile'">
+                                                <td class="number text-center">4</td>
+                                                <td class="image text-center"><i class="fa-solid fa-dumbbell fa-5x"></td>
+                                                <td class="product"><strong>Calcio, Orina 24 horas</strong><br></td>
+                                                <td class="price text-center"><b>₡12,900.00</b></td>
+                                                <td class="price text-right">Labin</td>
+                                            </tr>
+                                            <tr class="Exam Embarazo" onclick="window.location = 'https://localhost:44368/Profile/ExamProfile'">
+                                                <td class="number text-center">5</td>
+                                                <td class="image text-center"><i class="fa-solid fa-person-pregnant fa-5x"></i></td>
+                                                <td class="product"><strong>Células LE, Suero</strong><br></td>
+                                                <td class="price text-center"><b>₡11,900.00</b></td>
+                                                <td class="price text-right">Laboratorios Martínez</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- END TABLE RESULT -->
+
+                                <!-- BEGIN PAGINATION -->
+                                <ul class="pagination">
+                                    <li class="disabled"><a href="#">«</a></li>
+                                    <li class="active"><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li><a href="#">»</a></li>
+                                </ul>
+                                <!-- END PAGINATION -->
+                            </div>
+                            <!-- END RESULT -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END SEARCH RESULT -->
+        </div>
+    </div>
+    <script src="~/Scripts/Views/Results.js"></script>
+
+

@@ -1,0 +1,9 @@
+﻿#photo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 0.5px solid black;
+    background-position: center;
+    background-size: contain;
+    border-color: #000;
+}

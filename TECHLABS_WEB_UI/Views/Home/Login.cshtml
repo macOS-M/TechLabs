@@ -1,0 +1,82 @@
+﻿@model TECHLABS_DTO.User
+@{
+    ViewBag.Title = "Login";
+}
+<script src="~/Scripts/Views/Login.js"></script>
+
+
+@*<input id="message" value="@Session["msg"]" hidden />*@
+@using (Html.BeginForm("LoginPost", "Home", FormMethod.Post))
+{
+    <form>
+        <h2 class="container text-center mt-5">Iniciar sesión</h2>
+
+        <div class="container">
+            <div class="row">
+
+                
+                <div class="col-12 col-md-4 text-end">
+
+                    <img src="~/Assets/login_banner.jpg" class="img-fluid rounded-2" width="300" />
+                </div>
+
+                <div class="col-12 col-md-4">
+
+                    <div class="d-flex justify-content-center">
+                        <div class="w-75">
+                            <div class="mb-3">
+                                <label for="txtEmail" class="form-label">Correo electrónico<span class="text-danger ms-1">*</span></label>
+                                @*<input type="email" class="form-control" id="txtEmail"
+                                    placeholder="nombre@dominio.com" asp-for=@Model.Email>*@
+                                @Html.TextBoxFor(m => m.Email, new { Class = "form-control", id = "txtEmail" })
+
+
+                            </div>
+                            <div class="mb-3">
+                                <label for="txtPassword" class="form-label">Contraseña<span class="text-danger ms-1">*</span></label>
+                                @*<input type="password" class="form-control" id="txtPassword"
+                                    placeholder="*******" @inputf=@Model.Password>*@
+                                @Html.PasswordFor(m => m.Password, new { Class = "form-control", id = "txtPassword" } )
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="text-center">
+                 
+                    <a class="" id="recuperar" style="text-decoration: none;">Recuperar contraseña</a>
+                    
+                    <a class=" ms-5" id="registrarse"  style="text-decoration: none;">Registrarse</a>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="text-center">
+                    <button class="btn btn-primary" type="submit" id="show-msg">Confirmar</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+
+
+}
+
+@if (ViewBag.Message != null) { 
+    <script type="text/javascript">
+        window.onload = function () {
+            Swal.fire("@ViewBag.Message", '', 'info');
+        }
+
+    </script>
+
+    
+}
+
+
+
+

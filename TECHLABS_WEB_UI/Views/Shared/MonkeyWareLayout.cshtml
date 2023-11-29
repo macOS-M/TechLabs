@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "MonkeyWareLayout";
+}
+<!DOCTYPE html>
+<html>
+<head>
+   <link href="~/Content/Views/MonkeyWare.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="nav">
+
+    </div>
+</body>
+
+<div class="container body-content card-footer">
+    @RenderBody()
+    <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - MonkeyWare software development team</p>
+    </footer>
+</div>
+</html>
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)

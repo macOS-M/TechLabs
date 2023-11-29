@@ -1,0 +1,109 @@
+﻿@{
+    ViewBag.Title = "TestAdmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/Views/ManageUsers.css" rel="stylesheet" />
+
+
+<h2 class="container text-center pt-5">Administración de pruebas</h2>
+<div class="container text-end">
+    <button class="btn btn-primary mb-3" id="link-resgiterTest">Registrar Prueba</button>
+</div>
+
+
+
+
+<table id="tblTests" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Muestra Requerida</th>
+            <th>Instrucciones</th>
+            <th>Metodología</th>
+            <th>Referencia</th>
+            <th>Costo</th>
+            <th>Categoría</th>
+            <th>Laboratorio</th>
+            <th>Acción</th>
+        </tr>
+    </thead>
+</table>
+
+
+
+
+<div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Prueba<span id="editingUserName"> </span></h1>
+            </div>
+            <div class="modal-body">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputName" class="form-label">Nombre de la prueba</label>
+                            <input type="text" class="form-control" id="inputName">
+                        </div>
+                        <div class="col">
+                            <label for="inputDescription" class="form-label">Descripción</label>
+                            <input type="text" class="form-control" id="inputDescription">
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+                        <div class="col">
+                            <label for="inputSampleRequired" class="form-label">Muestra Requerida</label>
+                            <input type="text" class="form-control" id="inputSampleRequired">
+                        </div>
+                        <div class="col">
+                            <label for="inputInstrucions" class="form-label">Instrucciones</label>
+                            <input type="text" class="form-control" id="inputInstrucions">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="inputMethod" class="form-label">
+                                Metodología
+                            </label>
+                            <input type="text" class="form-control" id="inputMethod">
+                        </div>
+                        <div class="col-3">
+                            <label for="inputReference" class="form-label">Referencia</label>
+                            <input type="text" class="form-control" id="inputReference">
+                        </div>
+                        <div class="col-3">
+                            <label for="inputCost" class="form-label">Costo</label>
+                            <input type="text" class="form-control" id="inputCost">
+                        </div>
+                    </div>
+                    @*<div class="row">
+                        <div class="col">
+                            <label for="inputCatergory" class="form-label">Categoría</label>
+                            <select class="form-control" id="inputCatergory"></select>
+                        </div>
+                        <div class="col">
+                            <label for="inputLab" class="form-label">Laboratorio</label>
+                            <select class="form-control" id="inputLab"></select>
+                        </div>
+                    </div>*@
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnConfirmChanges">Editar Prueba</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<input type="text" class="form-control" value=@Session["email"] id="inputUser" hidden>
+<input type="text" class="form-control" id="inputId" hidden>
+<script src="~/Scripts/Views/TestAdmin/TestAdmin.js"></script>
+

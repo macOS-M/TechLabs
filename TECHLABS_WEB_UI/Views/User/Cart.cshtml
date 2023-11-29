@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Views/Cart.css" rel="stylesheet" />
+
+<script src="~/Scripts/Views/Cart.js"></script>
+<script src="~/Scripts/Views/Paypal.js"></script>
+
+<h2 class="container text-center">Carrito de compras</h2>
+
+
+<div class="container d-flex justify-content-center">
+
+    <div class="container-cart col-lg-8">
+        <table id="tblOfertas" class="table" style="width: 100%">
+            <thead>
+                <tr id="tablaData">
+
+                    <th scope="col" class="form-label">Producto</th>
+                    <th scope="col" class="form-label">Precio</th>
+                    <th scope="col" class="form-label">Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="tblBody" >
+                <tr id="tblRow">
+                    @*  <td>Examen Sangre</td>
+                        <td id="cartPrice" value="2000">2000</td>
+                        <td>
+                            <input class="input-group mb-3" type="number" style="max-width: 30px; margin-left: 15px;" id="cantidadID" min="0" max="9" />
+                        </td>*@
+                </tr>
+
+            </tbody>
+
+        </table>
+        <p id="previoFinal">Precio: <span id="pago-final"></span></p>
+    </div>
+
+</div>
+
+
+<div class="container  " id="paypal">
+
+
+    <div class="input-group mb-3 mt-4 justify-content-center text-center">
+        <div>
+            <input id="cuponInput" class="form-control" type="text" />
+            <p id="cuponMessage"></p>
+
+        </div>
+
+        <div class="input-group-prepend">
+            <button type="submit" id="btn-cupon" class="btn btn-primary">Canjear Cupón</button>
+        </div>
+
+    </div>
+    <div class="input-group mb-3 justify-content-center text-center">
+        <div class="input-group-prepend">
+            <button type="submit" id="btnPagar" class="btn btn-primary">Pagar</button>
+        </div>
+    </div>
+</div>

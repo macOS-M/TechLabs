@@ -1,0 +1,16 @@
+﻿.img-wrap {
+    position: relative;
+    height: 80px;
+    width: 80px;    
+}
+/*
+.img-wrap img {
+    object-fit: cover;
+}*/
+
+.img-wrap .close {
+    position: absolute;
+    /*top: px;*/
+    right: 2px;
+    z-index: 100;
+}

@@ -1,0 +1,12 @@
+﻿
+body {
+    background: #ffffff;
+}
+
+#parent-container {
+    background: #eeeeee;
+}
+
+input[type="text"] {
+    padding: 1px;
+}

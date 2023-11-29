@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "Catalog";
+}
+
+
+    <link href="~/Content/Views/catalog.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/72517cec23.js" crossorigin="anonymous"></script>
+
+
+    <div class="container bootstrap snipets">
+        <h1 class="text-center text-muted">Catálogo exámenes</h1>
+        
+        <div class="text-center">
+        <input type="search" class="form-control-sm text-center" placeholder=""/>@*<button class="btn btn-primary btn-sm">Buscar</button>*@
+        
+        
+        </div>
+
+
+        <div class="row flow-offset-1 text-center">
+
+
+            <div class="col-xs-6 col-md-4">
+                <div class="product tumbnail thumbnail-3">
+                    <a href="#"></a>
+                    <div class="caption">
+                        <a href="#"><i class="fa-solid fa-dumbbell fa-5x"></i></a>
+                        <h6> @Html.ActionLink("Deportista", "Results", "Catalog", new { Info = "Deportista" }, null) </h6><span class="price">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <div class="product tumbnail thumbnail-3">
+                    <a href="#"><i class="fa-solid fa-person-pregnant fa-5x"></i></a>
+                    <div class="caption">
+                        <h6>@Html.ActionLink("Embarazo", "Results", "Catalog", new { Info = "Embarazo" }, null)</h6><span class="price">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xs-6 col-md-4">
+                <div class="product tumbnail thumbnail-3">
+                    <a href="#"><i class="fa-solid fa-flask fa-5x"></i></a>
+                    <div class="caption">
+                        <h6>@Html.ActionLink("Hepático", "Results", "Catalog", new { Info = "Hepático" }, null)</h6><span class="price">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <div class="product tumbnail thumbnail-3">
+                    <a href="#"><i class="fa-solid fa-venus fa-5x"></i></a>
+                    <div class="caption">
+                        <h6>@Html.ActionLink("Hormonal femenino", "Results", "Catalog", new { Info = "Hormonal femenino" }, null)</h6><span class="price">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <div class="product tumbnail thumbnail-3">
+                    <a href="#"><i class="fa-sharp fa-solid fa-child-reaching fa-5x"></i></a>
+                    <div class="caption">
+                        <h6>@Html.ActionLink("Infantil", "Results", "Catalog", new { Info = "Infantil" }, null)</h6><span class="price">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <div class="product tumbnail thumbnail-3">
+                    <a href="#"><i class="fa-solid fa-seedling fa-5x"></i></a>
+                    <div class="caption">
+                        <h6>@Html.ActionLink("Nutricional", "Results", "Catalog", new { Info = "Nutricional" }, null)</h6><span class="price">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <div class="product tumbnail thumbnail-3">
+                    <a href="#"><i class="fa-solid fa-prescription-bottle fa-5x"></i></a>
+                    <div class="caption">
+                        <h6>@Html.ActionLink("Renal", "Results", "Catalog", new { Info = "Renal" }, null)</h6><span class="price">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <div class="product tumbnail thumbnail-3">
+                    <a href="#"><i class="fa-solid fa-flask-vial fa-5x"></i></a>
+                    <div class="caption">
+                        <h6>@Html.ActionLink("Tiroideo", "Results", "Catalog", new { Info = "Tiroideo" }, null)</h6><span class="price">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6 col-md-4">
+                <div class="product tumbnail thumbnail-3">
+                    <a href="#"><i class="fa-solid fa-venus-mars fa-5x"></i></a>
+                    <div class="caption">
+                        <h6>@Html.ActionLink("Transmisión Sexual", "Results", "Catalog", new { Info = "Transmisión Sexual" }, null)</h6><span class="price">
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+

@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "OTPRecuperar";
+}
+
+<link href="~/Content/Views/OTPRecuperar.css" rel="stylesheet" />
+<script src="~/Scripts/Views/OTP/OTPRecuperar.js"></script>
+
+<h2 class="pt-5"></h2>
+<form>
+    <div class="container w-50 rounded-3 pt-1" id="parent-container">
+        <h3 class="container text-center ">Recuperar contraseña</h3>
+
+        <div class="text-center">
+            <p class="text-dark"></p>
+            <p class="text-dark">Enviaremos un código de uso único (OTP) a su correo electrónico.</p>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8 d-flex">
+                <label for="email-recover" class="form-label fw-bold mb-0">Correo electrónico</label>
+            </div>
+                <div class="col-lg-8 d-flex">
+                    <input type="text" class="form-control text-center" id="email-recover" />
+                    <button class="btn btn-primary btn-sm ms-2" id="btn-recover">Enviar</button>
+                </div>
+
+            </div>
+
+        <div class="row justify-content-center" id="div-otp">
+           
+                <div class="col-lg-8 d-flex pb-4 mt-3">
+                    <input type="text" class="form-control text-center " id="otp-input" placeholder="Ingrese el código de uso único " />
+                    <button class="btn btn-primary btn-sm ms-2" id="btn-otp-confirm">Enviar</button>
+                </div>
+
+            </div>
+
+
+
+        </div>
+</form>
+
+<div class="modal fade" id="UserModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Cambio de contraseña</h1>
+               
+            </div>
+            <div class="modal-body">
+                <form>
+
+                    <div>
+                        <label for="txtPassword" class="form-label mb-0 me-2">Nueva contraseña<span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="txtPassword">
+                    </div>
+
+                   
+                    <div>
+                        <label for="txtPasswordCon" class="form-label mb-0 me-2">Confirmación de contraseña<span class="text-danger">*</span></label>
+                        <input type="password" class="form-control" id="txtPasswordCon">
+                    </div>
+
+
+
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="btnConfirmChanges">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>

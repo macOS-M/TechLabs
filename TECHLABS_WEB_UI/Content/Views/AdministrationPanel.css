@@ -1,0 +1,17 @@
+﻿.tile {
+    background: #101820;
+    color: white;
+}
+
+
+    .tile:hover {
+        background: #334257;
+        transform: scale(1.1);
+        transition: 2ms
+    }
+
+
+
+.description {
+    font-size: 12px;
+}

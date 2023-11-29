@@ -1,0 +1,49 @@
+﻿
+body{
+    padding-top: 100px;
+}
+
+
+#previoFinal{
+    margin-left: 10px;
+}
+
+#cantidadCompra {
+    padding-left: -100px;
+}
+
+#btn-cupon {
+    margin-left: 10px;
+    padding-bottom: -10px;
+}
+
+#cuponInput {
+    padding-bottom: 10px;
+    
+}
+
+#btnPagar {
+    margin-top: -20px;
+    width: 345px;
+}
+
+
+#cuponMessage {
+    margin-top: 0px !important;
+}
+
+
+.cuponMessageDeny{
+    color: red;
+}
+
+.cuponMessageApproved {
+    color: green;
+}
+
+
+.btn-paypal {
+ 
+    margin-left: 30px;
+}
+

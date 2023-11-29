@@ -1,0 +1,317 @@
+﻿
+@{
+    ViewBag.Title = "UserProfile";
+
+
+}
+
+
+
+<link href="~/Content/Views/UserProfile.css" rel="stylesheet" />
+
+<link href="~/Content/Views/Calendar/main.css" rel="stylesheet" />
+
+<script src="~/Scripts/Views/CalendarUser.js"></script>
+<script src="~/Scripts/Views/UserProfile.js"></script>
+
+<script src="~/Scripts/Views/Examen.js"></script>
+
+<script src="~/Scripts/Views/UserManagement/UserProfile.js"></script>
+<script src="~/Scripts/Views/UserManagement/UserUtils.js"></script>
+
+
+
+
+<link href="~/Scripts/Calendario/main.css" rel="stylesheet" />
+<script src="~/Scripts/Calendario/main.js"></script>
+
+<input type="text" class="form-control" value=@Session["email"] id="userSession" hidden>
+<div class="d-flex mt-5">
+
+
+
+
+    <div class="nav flex-column nav-pills me-3 pt-5" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        <button class="nav-link active text-start" id="v-perfil-home-tab" data-bs-toggle="pill" data-bs-target="#v-perfil-home" type="button" role="tab" aria-controls="v-perfil-home" aria-selected="true"><i class="fa-solid fa-user me-3"></i>Perfil</button>
+        @*@if (Session["user"] != null && Session["role"].ToString() == "0")
+        {*@
+            <button class="nav-link text-start" id="v-pills-compras-tab" data-bs-toggle="pill" data-bs-target="#v-pills-compras" type="button" role="tab" aria-controls="v-pills-compras" aria-selected="false"><i class="fa-solid fa-bag-shopping me-3"></i>Mis compras</button>
+            <button class="nav-link text-start" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false"><i class="fa-solid fa-calendar-days me-3"></i>Calendario</button>
+            <button class="nav-link text-start" id="v-pills-tests-tab" data-bs-toggle="pill" data-bs-target="#v-pills-tests" type="button" role="tab" aria-controls="v-pills-tests" aria-selected="false"><i class="fa-solid fa-vial me-3"></i>Examenes</button>
+        }
+        </div>
+
+    <div class="tab-content w-75" id="v-pills-tabContent">
+
+        <div class="tab-pane fade show active " id="v-perfil-home" role="tabpanel" aria-labelledby="v-perfil-home-tab" tabindex="0">
+
+            <div class="container">
+                <h4 class="container text-center"> Editar información del perfil</h4>
+                
+
+                <div class="justify-content-center text-center mt-3">
+                    <img src="~/Assets/default-user.jpg" id="photo" />
+                    <button class="btn btn-outline-primary ms-3" type="button" id="btn-foto">Subir foto</button>
+
+                </div>
+
+                <div class="row justify-content-center text-center mt-3">
+                    <div class="col-4">
+                        <div class="d-flex pt-2">
+                            <label for="txtNombre" class="form-label mb-0 me-2">Nombre<span class="text-danger">*</span></label>
+                        </div>
+                        <div class="d-flex">
+                            <input type="text" class="form-control" id="txtNombre">
+                        </div>
+                        <div class="d-flex pt-2">
+                            <label for="txtApellido" class="form-label mb-0 me-2">Apellido<span class="text-danger">*</span></label>
+                        </div>
+                        <div class="d-flex">
+                            <input type="text" class="form-control" id="txtApellido">
+                        </div>
+                        <div class="d-flex pt-2">
+                            <label for="txtSegundoApellido" class="form-label mb-0 me-2">Segundo Apellido</label>
+                        </div>
+                        <div class="d-flex">
+                            <input type="text" class="form-control" id="txtSegundoApellido">
+                        </div>
+                        <div class="d-flex pt-2">
+                            <label for="txtTelefono" class="form-label mb-0 me-2">Teléfono<span class="text-danger">*</span></label>
+                        </div>
+                        <div class="d-flex ">
+                            <input type="text" class="form-control" id="txtTelefono">
+                        </div>
+
+                    </div>
+                    <div class="col-4">
+                        <div class="d-flex pt-2">
+                            <label for="txtEmail" class="form-label mb-0 me-2">Correo electrónico<span class="text-danger">*</span></label>
+                        </div>
+                        <div class="d-flex ">
+                            <input type="text" class="form-control" id="txtEmail" disabled>
+                        </div>
+                        <div class="d-flex pt-2">
+                            <label for="txtPassword" class="form-label mb-0 me-2">Contraseña<span class="text-danger">*</span></label>
+                        </div>
+                        <div class="d-flex ">
+                            <input type="password" class="form-control" id="txtPassword">
+                        </div>
+                        <div class="d-flex pt-2">
+                            <label for="txtPasswordCon" class="form-label mb-0 me-2">Confirmación Contraseña<span class="text-danger">*</span></label>
+                        </div>
+                        <div class="d-flex ">
+                            <input type="password" class="form-control" id="txtPasswordCon">
+                        </div>
+
+                        <div class="text-start pt-2">
+                            <label class="form-label fw-bold">Factor de autenticación </label>
+                        </div>
+
+                        <div class="form-check text-start">
+                            <input class="form-check-input " type="checkbox" value="" id="checkBoxEmail">
+                            <label class="form-check-label" for="checkboxEmail">Correo electrónico</label>
+                        </div>
+                        <div class="form-check text-start">
+                            <input class="form-check-input " type="checkbox" value="" id="checkBoxSMS">
+                            <label class="form-check-label" for="checkSMS">SMS</label>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="text-center pt-5">
+                    <button type="submit" class="btn btn-primary" id="btnUpdateInfo">Confirmar</button>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="tab-pane fade" id="v-pills-compras" role="tabpanel" aria-labelledby="v-pills-compras-tab" tabindex="0">
+            <h4 class="container text-center">Mis compras</h4>
+
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Laboratorio</th>
+                        <th scope="col">Monto de pago</th>
+                        <th scope="col">Factura</th>
+                    </tr>
+                </thead>
+                <tbody class="table-group-divider">
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>7/22/22</td>
+                        <td>Labin</td>
+                        <td>₡ 25.000</td>
+                        <td> <a class="nav-link" href="#"> <i class="fa-solid fa-receipt"></i> Detalles de compra </a></td>
+
+
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>7/22/22</td>
+                        <td>Labin</td>
+                        <td>₡ 25.000</td>
+                        <td> <a class="nav-link" href="#"> <i class="fa-solid fa-receipt"></i> Detalles de compra </a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>7/22/22</td>
+                        <td>Labin</td>
+                        <td>₡ 25.000</td>
+                        <td> <a class="nav-link" href="#"> <i class="fa-solid fa-receipt"></i> Detalles de compra </a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+
+
+
+        </div>
+        <div class="tab-pane fade" id="v-pills-disabled" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabindex="0">...</div>
+
+        <!--CITAS START-->
+        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabindex="0">
+            <div id="calendar" style="width:115%;"></div>
+        </div>
+
+
+        <!--CITAS END-->
+        <!--EXAMENES START-->
+
+        <div class="tab-pane fade" id="v-pills-tests" role="tabpanel" aria-labelledby="v-pills-tests-tab" tabindex="0">
+            <h4 class="container text-center">Mis exámenes</h4>
+            <table class="table table-hover" id="dataTable">
+                <thead class="table-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Examen</th>
+                        <th scope="col">Laboratorio</th>
+                        <th scope="col">Fecha de Expiración</th>
+                        <th scope="col">Acciones</th>
+                        <th scope="col">Resultados</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Endoscopía</td>
+                        <td>Labin</td>
+                        <td>2022/12/01</td>
+                        <td><i class="fa-solid fa-check visible" id="icon1"></i></td>
+                        <td> <a class="nav-link" href="#"> <i class="fa-solid fa-receipt"></i> EndoscopiaLabin01.pdf </a></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">2</th>
+                        <td>Examen Ocular</td>
+                        <td>Labin</td>
+                        <td>2022/12/20</td>
+                        <td><button class="btn btn-primary btn-sm agendar" id="agendar"onclick="agendar()">Agendar</button> <i class="fa-solid fa-check invisible" id="icon" ></i></td> 
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">3</th>
+                        <td>Pruebas Generales</td>
+                        <td>Labin</td>
+                        <td>2022/12/22</td>
+                        <td><button class="btn btn-primary btn-sm agendar">Agendar</button> <i class="fa-solid fa-check invisible"></i></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--EXAMENES END-->
+
+
+
+
+    </div>
+</div>
+
+
+<!--Modal for Calendario-->
+<div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Información</h1>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+                        <div>
+                            <p>Identificador: <span id="txtId"></span></p>
+                        </div>
+                        <div>
+                            <p>Nombre: <span id="txtName"></span></p>
+                        </div>
+                        <div>
+                            <p>Laboratorio: <span id="txtLab"></span> </p>
+                        </div>
+                        <div>
+                            <p>Muestra requerida: <span id="txtSample"></span></p>
+                        </div>
+
+                        <div>
+                            <p>Descripción: <span id="txtDescription"></span></p>
+                        </div>
+
+                        <div>
+                            <p>Instrucciones: <span id="txtInst"></span></p>
+                        </div>
+                        
+                        <div>
+                            <p>Estatus: <span id="txtStatus"></span></p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary btn-danger" id="cancel">Cancelar Cita</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Modal for Examen-->
+<div class="modal fade" id="agendarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Seleccione el horario:</h1>
+
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="mb-3">
+
+                        <div>
+                            <input type="datetime-local" name="fecha" step="2" />
+                        </div>
+                        
+                    </div>
+                </form>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" id="confirmar">Agendar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+

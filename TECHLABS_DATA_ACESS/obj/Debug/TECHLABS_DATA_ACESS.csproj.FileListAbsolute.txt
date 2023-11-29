@@ -1,0 +1,9 @@
+C:\Users\Usuario\Desktop\RepoProyecto\Proyecto_2_TECHLABS\TECHLABS_DATA_ACESS\bin\Debug\TECHLABS_DATA_ACESS.dll
+C:\Users\Usuario\Desktop\RepoProyecto\Proyecto_2_TECHLABS\TECHLABS_DATA_ACESS\bin\Debug\TECHLABS_DATA_ACESS.pdb
+C:\Users\Usuario\Desktop\RepoProyecto\Proyecto_2_TECHLABS\TECHLABS_DATA_ACESS\bin\Debug\TECHLABS_DTO.dll
+C:\Users\Usuario\Desktop\RepoProyecto\Proyecto_2_TECHLABS\TECHLABS_DATA_ACESS\bin\Debug\TECHLABS_DTO.pdb
+C:\Users\Usuario\Desktop\RepoProyecto\Proyecto_2_TECHLABS\TECHLABS_DATA_ACESS\obj\Debug\TECHLABS_DATA_ACESS.csproj.AssemblyReference.cache
+C:\Users\Usuario\Desktop\RepoProyecto\Proyecto_2_TECHLABS\TECHLABS_DATA_ACESS\obj\Debug\TECHLABS_DATA_ACESS.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\Desktop\RepoProyecto\Proyecto_2_TECHLABS\TECHLABS_DATA_ACESS\obj\Debug\TECHLABS_DATA_ACESS.csproj.CopyComplete
+C:\Users\Usuario\Desktop\RepoProyecto\Proyecto_2_TECHLABS\TECHLABS_DATA_ACESS\obj\Debug\TECHLABS_DATA_ACESS.dll
+C:\Users\Usuario\Desktop\RepoProyecto\Proyecto_2_TECHLABS\TECHLABS_DATA_ACESS\obj\Debug\TECHLABS_DATA_ACESS.pdb

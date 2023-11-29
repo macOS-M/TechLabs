@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Añadir prueba";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="container text-center pt-5">Registrar prueba</h2>
+<div>
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <label for="inputName" class="form-label">Nombre de la prueba</label>
+                <input type="text" class="form-control" id="inputName">
+            </div>
+            <div class="col">
+                <label for="inputDescription" class="form-label">Descripción</label>
+                <input type="text" class="form-control" id="inputDescription">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="inputSampleRequired" class="form-label">Muestra Requerida</label>
+                <input type="text" class="form-control" id="inputSampleRequired">
+            </div>
+            <div class="col">
+                <label for="inputInstrucions" class="form-label">Instrucciones</label>
+                <input type="text" class="form-control" id="inputInstrucions">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <label for="inputMethod" class="form-label">
+                    Metodología
+                </label>
+                <input type="text" class="form-control" id="inputMethod">
+            </div>
+            <div class="col-3">
+                <label for="inputReference" class="form-label">Referencia</label>
+                <input type="text" class="form-control" id="inputReference">
+            </div>
+            <div class="col-3">
+                <label for="inputCost" class="form-label">Costo</label>
+                <input type="text" class="form-control" id="inputCost">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="inputCatergory" class="form-label">Categoría</label>
+                <select class="form-control" id="inputCatergory"></select>
+            </div>
+            <div class="col">
+                <label for="inputLab" class="form-label">Laboratorio</label>
+                <select class="form-control" id="inputLab"></select>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-4">
+                <label for="btnRegister" class="form-label">&nbsp;</label>
+                <button class="btn btn-primary form-control" id="btnRegister">Registrar</button>
+
+            </div>
+        </div>
+    </div>
+    <input type="text" class="form-control" value=@Session["email"] id="inputUser" hidden>
+</div>
+<script src="~/Scripts/Views/TestRegister/TestRegister.js"></script>
+
+@*TEST_ID
+    NAME
+    DESCRIPTION
+
+    SAMPLE_REQUIRED
+    INSTRUCTIONS
+    METHODOLOGY
+    REFERENCE
+    COST
+    LAB_ID
+    CATEGORY_ID
+    MESUREMENT_NAME
+    MESUREMENT
+    STATU__ID*@

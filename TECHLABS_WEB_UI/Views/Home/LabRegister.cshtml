@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "LabRegister";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<link href="~/Content/Views/LabRegister.css" rel="stylesheet" />
+
+
+<h2 class="container text-center pt-5">Registrar un laboratorio</h2>
+<div>
+    
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <label for="inputName" class="form-label">Nombre de laboratorio</label>
+                <input type="text" class="form-control" id="inputName">
+            </div>
+            <div class="col">
+                <label for="inputPhone" class="form-label">Número de teléfono</label>
+                <input type="text" class="form-control" id="inputPhone">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="InputEmail" class="form-label">Correo electrónico</label>
+                <input type="text" class="form-control" id="InputEmail">
+            </div>
+            <div class="col">
+                <label for="inputSocialName" class="form-label">Razón Social</label>
+                <input type="text" class="form-control" id="inputSocialName">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-6">
+                <label for="inputComercialName" class="form-label">Nombre Comercial</label>
+                <input type="text" class="form-control" id="inputComercialName">
+            </div>
+            <div class="col-3">
+                <label for="inputOpen" class="form-label">Hora de apertura</label>
+                <input type="time" class="form-control" id="inputOpen">
+            </div>
+            <div class="col-3">
+                <label for="inputClose" class="form-label">Hora de cierre</label>
+                <input type="time" class="form-control" id="inputClose">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="inputCapacity" class="form-label">Capacidad máxima</label>
+                <input type="text" class="form-control" id="inputCapacity">
+            </div>
+            <div class="col">
+                <label for="inputWebAddress" class="form-label">Dirección de la página web</label>
+                <input type="text" class="form-control" id="inputWebAddress">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="foto-div" class="form-label">Fotografías (Mínimo 5)</label>
+                <br />
+                <div id="foto-div">
+
+
+
+
+                </div>
+                <div class="d-inline-block">
+                    <button id="btn-foto" class="btn  btn-primary form-control">Subir</button>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-4">
+                <label for="btnRegister" class="form-label">&nbsp;</label>
+                <button class="btn btn-primary form-control" id="btnRegister">Registrarse</button>
+            </div>
+        </div>
+        <input type="text" class="form-control" value=@Session["email"] id="inputUser" hidden>
+    </div>
+
+</div>
+<script src="~/Scripts/Views/LabRegister/LabRegister.js"></script>
+

@@ -1,0 +1,29 @@
+﻿.row pt-3 text-center {
+    padding: 100px;
+}
+
+.row-height {
+    height: 70px;
+    text-align: center;
+    padding-top: 25px;
+}
+
+.col{
+    background-color: #e3e3e3;
+}
+
+.col {
+    background-color: #f5f3f3;
+}
+
+.title-header {
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.info {
+font-size: 30px;
+
+
+}
